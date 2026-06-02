@@ -19,7 +19,8 @@ export default function Home() {
       <main className="flex-1">
         {/* ===== HERO ===== */}
         <section className="relative overflow-hidden bg-ink">
-          <FlutedImage tone="darkwood" src="/images/intro.jpg" alt="Fluted feature wall interior" priority className="absolute inset-0 h-full w-full" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/intro.jpg" alt="Fluted feature wall interior" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/60 to-ink/25" />
           <div className="relative mx-auto flex min-h-[78vh] max-w-7xl flex-col justify-center px-5 py-24 lg:px-8">
             <div className="max-w-2xl">
@@ -126,7 +127,8 @@ export default function Home() {
 
         {/* ===== THOUGHTFUL DESIGN BAND ===== */}
         <section className="relative overflow-hidden">
-          <FlutedImage tone="stone" src="/images/project2.jpg" alt="LED-lit fluted feature wall" className="absolute inset-0 h-full w-full" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/project2.jpg" alt="LED-lit fluted feature wall" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-ink/65" />
           <div className="relative mx-auto max-w-7xl px-5 py-24 text-center lg:px-8">
             <h2 className="font-[family-name:var(--font-display)] text-3xl font-extrabold uppercase text-white sm:text-4xl">
