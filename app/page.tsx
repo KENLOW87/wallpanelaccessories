@@ -1,9 +1,15 @@
+import Link from "next/link";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import CategoryCard from "./components/CategoryCard";
-import { ChatIcon, ShieldIcon, StockIcon, TruckIcon } from "./components/icons";
+import FlutedImage from "./components/FlutedImage";
 import { categories } from "./data/categories";
-import Link from "next/link";
+import { projects } from "./data/projects";
+
+const features = [
+  { label: "Anti Scratch", icon: "M4 7l8-4 8 4M4 7v10l8 4 8-4V7M4 7l8 4 8-4" },
+  { label: "Easy to Clean", icon: "M3 12h18M12 3v18" },
+  { label: "Anti Flammable", icon: "M12 2c2 3 4 5 4 8a4 4 0 1 1-8 0c0-1 .5-2 1-3" },
+];
 
 export default function Home() {
   return (
@@ -11,152 +17,154 @@ export default function Home() {
       <Nav />
 
       <main className="flex-1">
-        {/* Hero */}
-        <section className="relative overflow-hidden bg-[#1a1410]">
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(217,119,6,0.15) 28px, rgba(217,119,6,0.15) 30px)",
-            }}
-            aria-hidden
-          />
-          <div className="relative mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-32">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
-                Malaysia&apos;s wall panel accessories specialist
+        {/* ===== HERO ===== */}
+        <section className="relative overflow-hidden bg-ink">
+          <FlutedImage tone="darkwood" gap={22} className="absolute inset-0 h-full w-full" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/30" />
+          <div className="relative mx-auto flex min-h-[78vh] max-w-7xl flex-col justify-center px-5 py-24 lg:px-8">
+            <div className="max-w-2xl">
+              <p className="font-[family-name:var(--font-display)] text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
+                Adds a directional<br />
+                <span className="text-lime">flair to any space</span>
               </p>
-              <h1 className="mt-5 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-                Every accessory you need to <span className="text-accent">finish a wall panel.</span>
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
-                Profiles, end caps, adhesives, mounting hardware, LED strips, and installation tools — all in one place.
-                Trade pricing, nationwide delivery from Selangor.
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300">
+                Get inspired by a fresh approach to crafting a home that&apos;s uniquely yours —
+                fluted panels, PVC marble and carbon crystal walls, supplied across Malaysia.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/products"
-                  className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3 text-base font-semibold text-white transition-colors hover:bg-amber-700"
+                  className="inline-flex items-center justify-center rounded-full bg-lime px-8 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-lime-dark"
                 >
-                  Browse Accessories
+                  View Products
                 </Link>
-                <a
-                  href="https://wa.me/60162258458?text=Hi%2C%20I%27d%20like%20a%20quote%20on%20wall%20panel%20accessories."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10"
-                >
-                  WhatsApp for Quote
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Value props */}
-        <section className="border-b border-border bg-background">
-          <div className="mx-auto grid max-w-7xl gap-6 px-5 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
-            {[
-              { icon: <StockIcon />, title: "8+ Categories in Stock", body: "From profiles to LED strips — everything for a finished install." },
-              { icon: <TruckIcon />, title: "Nationwide Delivery", body: "Same-day pickup in Selangor, fast ship across Malaysia." },
-              { icon: <ShieldIcon />, title: "Contractor-Grade", body: "Tested products that hold up on real job sites." },
-              { icon: <ChatIcon />, title: "WhatsApp Support", body: "Install advice from a real person, not a chatbot." },
-            ].map((v) => (
-              <div key={v.title} className="flex gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted text-brand">
-                  {v.icon}
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">{v.title}</p>
-                  <p className="mt-1 text-sm text-foreground/70">{v.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Product categories */}
-        <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">Our Range</p>
-              <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold sm:text-4xl">
-                Eight categories. One supplier.
-              </h2>
-              <p className="mt-3 max-w-2xl text-foreground/70">
-                Everything from the corner profile that hides the joint, to the LED strip that lights it up.
-                Browse by category or message us with a part you need.
-              </p>
-            </div>
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:gap-2"
-            >
-              View all products <span aria-hidden>&rarr;</span>
-            </Link>
-          </div>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((c) => (
-              <CategoryCard
-                key={c.slug}
-                title={c.title}
-                description={c.short}
-                icon={c.icon}
-                tone={c.tone}
-                href={`/products#${c.slug}`}
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* Stats */}
-        <section className="bg-[#1a1410] text-white">
-          <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
-            {[
-              { n: "8+", l: "Years in wall panel supply" },
-              { n: "5,000+", l: "Projects supplied" },
-              { n: "500+", l: "Contractor customers" },
-              { n: "100+", l: "Products in stock" },
-            ].map((s) => (
-              <div key={s.l}>
-                <p className="font-[family-name:var(--font-display)] text-5xl font-bold text-accent">{s.n}</p>
-                <p className="mt-2 text-sm text-zinc-300">{s.l}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Contact CTA */}
-        <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-          <div className="rounded-3xl bg-muted p-8 sm:p-14">
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">Get in touch</p>
-                <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold sm:text-4xl">
-                  Tell us what you&apos;re installing.
-                </h2>
-                <p className="mt-3 text-foreground/70">
-                  Send a photo or part name on WhatsApp and we&apos;ll quote you back with stock, price, and a
-                  delivery date. No call-back chase, no minimum order.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
                 <a
                   href="https://wa.me/60162258458"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-7 py-3 text-base font-semibold text-white transition-colors hover:bg-[#20bd5a]"
+                  className="inline-flex items-center justify-center rounded-full border border-white/25 px-8 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white/10"
                 >
-                  WhatsApp Now
+                  Get a Quote
                 </a>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-brand px-7 py-3 text-base font-semibold text-brand transition-colors hover:bg-brand hover:text-white"
-                >
-                  Visit Showroom
-                </Link>
               </div>
+
+              <div className="mt-12 flex gap-8">
+                {features.map((f) => (
+                  <div key={f.label} className="flex flex-col items-center gap-2 text-center">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-lime">
+                      <svg className="h-6 w-6 stroke-lime" fill="none" viewBox="0 0 24 24" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d={f.icon} />
+                      </svg>
+                    </span>
+                    <span className="text-xs font-semibold uppercase tracking-wide text-zinc-300">
+                      {f.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== INTRO ===== */}
+        <section className="diag-texture bg-background">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8">
+            <div>
+              <h2 className="font-[family-name:var(--font-display)] text-3xl font-extrabold uppercase leading-tight text-foreground sm:text-4xl">
+                Custom homes with<br />timeless elegance
+              </h2>
+              <p className="mt-6 leading-relaxed text-foreground/70">
+                Wall Panel Accessories Malaysia (Nova Arte Sdn Bhd) is a fluted panel, PVC marble
+                and foam panel solutions provider based in Malaysia. Today, we are proud to be one
+                of the leading and most recommended importers and wholesalers in the wall panel
+                industry. We are inspired to lead and sustain a transformational change in this
+                industry with revolutionary product innovation, top-notch design and a dedicated
+                team that provides outstanding service.
+              </p>
+              <Link
+                href="/about"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-lime px-7 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-lime-dark"
+              >
+                View More
+              </Link>
+            </div>
+            <FlutedImage tone="marble" rounded className="aspect-[5/4] w-full" />
+          </div>
+        </section>
+
+        {/* ===== WHAT WE DO ===== */}
+        <section className="bg-muted">
+          <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+            <div className="text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-lime-dark">What We Do</p>
+              <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-extrabold uppercase text-foreground sm:text-4xl">
+                Our Wall Panel Range
+              </h2>
+            </div>
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {categories.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/products#${c.slug}`}
+                  className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
+                >
+                  <FlutedImage tone={c.tone} className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-5">
+                    <h3 className="font-[family-name:var(--font-display)] text-lg font-bold uppercase text-white">
+                      {c.title}
+                    </h3>
+                    <span className="flex h-8 w-8 items-center justify-center rounded bg-lime text-ink transition-transform group-hover:translate-x-1">
+                      &rarr;
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== THOUGHTFUL DESIGN BAND ===== */}
+        <section className="relative overflow-hidden">
+          <FlutedImage tone="stone" gap={26} className="absolute inset-0 h-full w-full" />
+          <div className="absolute inset-0 bg-ink/55" />
+          <div className="relative mx-auto max-w-7xl px-5 py-24 text-center lg:px-8">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl font-extrabold uppercase text-white sm:text-4xl">
+              Thoughtful design for modern living
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-200">
+              The home of your dreams begins with the perfect palette for every room.
+            </p>
+            <Link
+              href="/gallery"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-lime px-8 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-lime-dark"
+            >
+              Find Out More
+            </Link>
+          </div>
+        </section>
+
+        {/* ===== OUR PROJECT ===== */}
+        <section className="diag-texture bg-background">
+          <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+            <div className="text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-lime-dark">Portfolio</p>
+              <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-extrabold uppercase text-foreground sm:text-4xl">
+                Our Projects
+              </h2>
+            </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {projects.map((p) => (
+                <article key={p.title} className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+                  <FlutedImage tone={p.tone} className="aspect-[4/3] w-full" />
+                  <div className="p-5">
+                    <h3 className="font-[family-name:var(--font-display)] text-base font-bold uppercase leading-snug text-foreground">
+                      {p.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/65">{p.desc}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>

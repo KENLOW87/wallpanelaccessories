@@ -1,104 +1,68 @@
-import {
-  AdhesiveIcon,
-  CapIcon,
-  CleanIcon,
-  DecorIcon,
-  HardwareIcon,
-  LedIcon,
-  ProfileIcon,
-  ToolIcon,
-} from "@/app/components/icons";
-import type { ReactNode } from "react";
+export type Tone = "wood" | "darkwood" | "marble" | "stone" | "dark" | "warm";
 
 export interface Category {
   slug: string;
   title: string;
   short: string;
   long: string;
-  tone: "brown" | "amber" | "cream" | "dark";
-  icon: ReactNode;
+  tone: Tone;
   items: string[];
 }
 
+// Mirrors the "What We Do" range on geometra.com.my
 export const categories: Category[] = [
   {
-    slug: "aluminum-profiles",
-    title: "Aluminum Profiles",
-    short: "Corner, joint, and channel profiles for clean transitions between panels.",
+    slug: "carbon-crystal-wall-panel",
+    title: "Carbon Crystal Wall Panel",
+    short: "Scratch-resistant, easy-clean panels with a flawless matte or gloss finish.",
     long:
-      "Anodized aluminum profiles in matte black, brushed silver, gold, and rose gold. Standard 2.4m and 2.7m lengths, custom cuts on request.",
-    tone: "brown",
-    icon: <ProfileIcon />,
-    items: ["L-corner profile", "T-joint profile", "U-channel profile", "Skirting profile"],
-  },
-  {
-    slug: "end-caps-trims",
-    title: "End Caps & Trims",
-    short: "Finishing pieces that hide raw panel edges for a polished look.",
-    long:
-      "Matched end caps and edge trims sized to fluted, carbon crystal, and PVC marble panels. Press-fit and adhesive-fix options.",
-    tone: "cream",
-    icon: <CapIcon />,
-    items: ["Fluted panel end cap", "Top trim", "Bottom trim", "Joint cover"],
-  },
-  {
-    slug: "panel-adhesives",
-    title: "Panel Adhesives & Sealants",
-    short: "Strong-grip mounting adhesives and gap-filling sealants.",
-    long:
-      "Construction-grade panel adhesives, neutral silicone sealants, and double-sided mounting tape. Tested compatible with PVC, MDF, and carbon crystal substrates.",
+      "Carbon crystal wall panels deliver a premium, seamless finish that resists scratches, moisture and fading. Ideal for feature walls, TV consoles and wardrobe fronts in homes, offices and hotels.",
     tone: "dark",
-    icon: <AdhesiveIcon />,
-    items: ["Panel mounting adhesive", "Silicone sealant", "Double-sided tape", "Foam tape"],
+    items: ["Matte finish", "High gloss", "Marble pattern", "Solid colours"],
   },
   {
-    slug: "mounting-hardware",
-    title: "Mounting Hardware",
-    short: "Clips, screws, brackets, and anchors for every wall type.",
+    slug: "mdf-board",
+    title: "MDF Board",
+    short: "Versatile engineered board for wave panels, feature walls and joinery.",
     long:
-      "Hidden-fix clip systems, panel screws with colour-matched caps, drywall and concrete anchors, mounting brackets for shelving and accents.",
-    tone: "cream",
-    icon: <HardwareIcon />,
-    items: ["Hidden fix clips", "Coloured panel screws", "Wall anchors", "Z-clip mounts"],
+      "MDF wave and grooved boards bring depth and rhythm to a wall. A smooth, paintable surface that machines cleanly for custom carpentry and built-in furniture.",
+    tone: "warm",
+    items: ["Wave board", "Grooved board", "Paintable surface", "Custom carpentry"],
   },
   {
-    slug: "led-lighting",
-    title: "LED Strips & Lighting",
-    short: "Accent and backlighting for fluted and feature panels.",
+    slug: "pvc-marble",
+    title: "PVC Marble",
+    short: "Lightweight marble-look sheets — the luxury of stone, easier to install.",
     long:
-      "Warm white and RGB LED strips with diffusers, sized to fit aluminum profiles. Plug-and-play drivers and dimmers included.",
-    tone: "amber",
-    icon: <LedIcon />,
-    items: ["Warm white LED strip", "RGB LED strip", "Diffuser channel", "LED driver"],
+      "PVC marble sheets reproduce natural marble veining at a fraction of the weight and cost. Waterproof and wipe-clean, perfect for feature walls, columns and wet areas.",
+    tone: "marble",
+    items: ["Calacatta white", "Black marble", "Beige travertine", "Grey veined"],
   },
   {
-    slug: "cleaning-care",
-    title: "Cleaning & Maintenance",
-    short: "Panel-safe cleaners that don't dull or scratch finishes.",
+    slug: "wainscoting",
+    title: "Wainscoting",
+    short: "Classic wall moulding that adds timeless character to any room.",
     long:
-      "pH-neutral cleaners, microfibre cloths, and protective sprays formulated for decorative wall panel surfaces.",
-    tone: "cream",
-    icon: <CleanIcon />,
-    items: ["Panel cleaner spray", "Microfibre cloth pack", "Anti-static spray", "Stain remover"],
+      "Wainscoting and decorative moulding frame a wall with elegant proportion. Pre-finished profiles make it fast to create a refined, classic feature on feature walls and hallways.",
+    tone: "stone",
+    items: ["Panel moulding", "Chair rail", "Skirting", "Decorative frames"],
   },
   {
-    slug: "cutting-tools",
-    title: "Cutting & Installation Tools",
-    short: "Precision cutters, levels, and spacers for clean installs.",
+    slug: "fluted-panel",
+    title: "Fluted Panel",
+    short: "Vertical fluted lines that add a directional flair to any space.",
     long:
-      "Mitre boxes, panel cutters, laser levels, spacers, and measuring tools sized for the job. Tools that pay for themselves on the first project.",
-    tone: "brown",
-    icon: <ToolIcon />,
-    items: ["Panel cutter", "Mitre box", "Laser level", "Installation spacers"],
+      "Our signature fluted panels create striking vertical rhythm and texture. Available in wood, hairline, walnut and coffee tones — pair with LED lighting for a modern, futuristic feature wall.",
+    tone: "darkwood",
+    items: ["Wood tone", "Hairline black", "Dark walnut", "Coffee / beige"],
   },
   {
-    slug: "decorative-accents",
-    title: "Decorative Accents",
-    short: "Mirrors, wave brick, and trim pieces that lift a feature wall.",
+    slug: "accessories",
+    title: "Accessories",
+    short: "Profiles, end caps, trims and adhesives that complete the install.",
     long:
-      "Mirror panels, wave crystal brick, and decorative inlays that pair with fluted and PVC marble panels. Designed to ship and install with the rest of the wall.",
-    tone: "dark",
-    icon: <DecorIcon />,
-    items: ["Mirror panel", "Wave crystal brick", "Decorative inlay", "Feature trim"],
+      "Every finishing piece a wall panel installation needs — aluminium profiles, end caps, trims, adhesives, mounting hardware and LED strips. Matched to the panels we supply.",
+    tone: "wood",
+    items: ["Aluminium profiles", "End caps & trims", "Panel adhesive", "LED strips"],
   },
 ];

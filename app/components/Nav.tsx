@@ -8,6 +8,8 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/video", label: "Video" },
+  { href: "/news", label: "Latest News" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -15,45 +17,36 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-40 bg-ink/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="font-[family-name:var(--font-display)] text-lg font-bold text-brand sm:text-xl">
-            Wall Panel Accessories
+        <Link href="/" className="flex flex-col leading-none">
+          <span className="font-[family-name:var(--font-display)] text-lg font-extrabold uppercase tracking-tight text-white sm:text-xl">
+            Wall Panel <span className="text-lime">Accessories</span>
           </span>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-foreground/60 sm:text-xs">
+          <span className="mt-0.5 text-[10px] uppercase tracking-[0.35em] text-white/55">
             Malaysia
           </span>
         </Link>
 
-        <nav className="hidden gap-8 md:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-brand"
+              className="text-[13px] font-semibold uppercase tracking-wide text-white/85 transition-colors hover:text-lime"
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        <a
-          href="https://wa.me/60162258458"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden rounded-full bg-brand px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-hover md:inline-block"
-        >
-          Get a Quote
-        </a>
-
         <button
           type="button"
           aria-label="Toggle menu"
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setOpen((o) => !o)}
         >
-          <svg className="h-6 w-6 stroke-foreground" fill="none" viewBox="0 0 24 24" strokeWidth="2">
+          <svg className="h-6 w-6 stroke-white" fill="none" viewBox="0 0 24 24" strokeWidth="2">
             {open ? (
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -64,25 +57,17 @@ export default function Nav() {
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-border px-5 py-3 md:hidden">
+        <nav className="flex flex-col border-t border-white/10 px-5 py-2 lg:hidden">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted hover:text-brand"
+              className="rounded-md px-3 py-2.5 text-sm font-semibold uppercase tracking-wide text-white/85 hover:bg-white/5 hover:text-lime"
               onClick={() => setOpen(false)}
             >
               {l.label}
             </Link>
           ))}
-          <a
-            href="https://wa.me/60162258458"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 rounded-full bg-brand px-5 py-2 text-center text-sm font-semibold text-white"
-          >
-            Get a Quote
-          </a>
         </nav>
       )}
     </header>

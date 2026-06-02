@@ -1,57 +1,54 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { ShieldIcon, StockIcon, TruckIcon, ChatIcon } from "../components/icons";
+import FlutedImage from "../components/FlutedImage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About | Wall Panel Accessories Malaysia",
   description:
-    "Malaysia's dedicated wall panel accessories supplier. Backed by 8+ years in the wall panel industry, serving contractors and DIY customers nationwide.",
+    "Wall Panel Accessories Malaysia (Nova Arte Sdn Bhd) — a leading importer and wholesaler of fluted panels, PVC marble and carbon crystal wall panels in Malaysia.",
 };
+
+const values = [
+  { title: "Product Innovation", body: "We continually source revolutionary panel products that set the pace in the industry." },
+  { title: "Top-Notch Design", body: "Finishes and profiles chosen to make every wall a designed feature, not an afterthought." },
+  { title: "Outstanding Service", body: "A dedicated team that supports designers, contractors and homeowners alike." },
+  { title: "Nationwide Supply", body: "Fast delivery from our Seri Kembangan base to projects across Malaysia." },
+];
 
 export default function AboutPage() {
   return (
     <>
       <Nav />
       <main className="flex-1">
-        <section className="border-b border-border bg-muted">
-          <div className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-24">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-brand">About us</p>
-            <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-bold sm:text-5xl">
-              The accessory specialist for Malaysia&apos;s wall panel industry.
+        <section className="bg-ink">
+          <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-lime">About Us</p>
+            <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-extrabold uppercase text-white sm:text-5xl">
+              Custom homes with timeless elegance
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/70">
-              We started supplying wall panels in Malaysia eight years ago. Over that time,
-              one thing kept coming up: contractors finished their job hunting for the
-              right profile, the right adhesive, the right LED strip — from five different
-              suppliers. So we built one place that stocks them all.
-            </p>
           </div>
         </section>
 
-        <section className="mx-auto max-w-5xl px-5 py-16 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
+        <section className="diag-texture bg-background">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8">
+            <FlutedImage tone="darkwood" rounded className="aspect-[5/4] w-full" />
             <div>
-              <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold sm:text-3xl">
-                What we do
+              <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold uppercase text-foreground sm:text-3xl">
+                Who we are
               </h2>
-              <p className="mt-4 text-foreground/70 leading-relaxed">
-                We stock and supply the accessories that complete a wall panel installation:
-                aluminum profiles, end caps, panel adhesives, mounting clips, LED strips,
-                cleaning products, and the tools to fit them. We sell to contractors, interior
-                designers, renovation firms, and DIY homeowners — same price, same stock, no
-                gatekeeping.
+              <p className="mt-5 leading-relaxed text-foreground/70">
+                Wall Panel Accessories Malaysia (Nova Arte Sdn Bhd) is a fluted panel, PVC marble
+                and foam panel solutions provider based in Malaysia. Today, we are proud to be one
+                of the leading and most recommended importers and wholesalers in the wall panel
+                industry.
               </p>
-            </div>
-            <div>
-              <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold sm:text-3xl">
-                Who we serve
-              </h2>
-              <p className="mt-4 text-foreground/70 leading-relaxed">
-                Our customers are installers across Selangor, KL, Johor, Penang, Pahang, and
-                Kedah. We ship nationwide and offer same-day pickup at our Seri Kembangan
-                warehouse. For trade buyers, we offer volume pricing and account terms —
-                ask on WhatsApp.
+              <p className="mt-4 leading-relaxed text-foreground/70">
+                We are inspired to lead and sustain a transformational change in this industry with
+                revolutionary product innovation, top-notch design and a dedicated team that
+                provides outstanding service. We supply residential, commercial and hotel projects
+                with a wide range of fluted panels, PVC marble, carbon crystal panels, MDF board,
+                wainscoting and all the accessories needed to complete an installation.
               </p>
             </div>
           </div>
@@ -59,22 +56,19 @@ export default function AboutPage() {
 
         <section className="bg-muted">
           <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold sm:text-4xl">
-              Why customers choose us
+            <h2 className="text-center font-[family-name:var(--font-display)] text-3xl font-extrabold uppercase text-foreground">
+              Why choose us
             </h2>
-            <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { icon: <StockIcon />, title: "All-in-one stock", body: "Eight accessory categories under one roof. No more chasing five suppliers." },
-                { icon: <TruckIcon />, title: "Fast fulfilment", body: "Same-day pickup in Selangor. Nationwide ship within 2-3 working days." },
-                { icon: <ShieldIcon />, title: "Tested compatibility", body: "Our adhesives and profiles are tested against the panels we sell." },
-                { icon: <ChatIcon />, title: "Real install help", body: "Stuck on a tricky corner? Send a photo. We answer on WhatsApp." },
-              ].map((v) => (
-                <div key={v.title}>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white">
-                    {v.icon}
-                  </div>
-                  <p className="mt-4 text-lg font-semibold">{v.title}</p>
-                  <p className="mt-2 text-sm text-foreground/70 leading-relaxed">{v.body}</p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {values.map((v) => (
+                <div key={v.title} className="rounded-2xl border border-border bg-white p-6">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-lime font-bold text-ink">
+                    &#10003;
+                  </span>
+                  <p className="mt-4 font-[family-name:var(--font-display)] text-lg font-bold uppercase text-foreground">
+                    {v.title}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/65">{v.body}</p>
                 </div>
               ))}
             </div>

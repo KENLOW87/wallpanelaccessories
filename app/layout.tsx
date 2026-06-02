@@ -1,36 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Playfair_Display } from "next/font/google";
+import { Geist, Montserrat } from "next/font/google";
 import "./globals.css";
-import WhatsAppButton from "./components/WhatsAppButton";
+import FloatingButtons from "./components/FloatingButtons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
+const montserrat = Montserrat({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Wall Panel Accessories Malaysia | Profiles, Adhesives, Trims & Installation Hardware",
+  title:
+    "Wall Panel Supplier Malaysia | Fluted Panel, PVC Marble, Carbon Crystal ~ Wall Panel Accessories Malaysia",
   description:
-    "Malaysia's one-stop supplier of wall panel accessories — aluminum profiles, end caps, adhesives, mounting hardware, LED strips, and installation tools. Nationwide delivery.",
+    "Wall Panel Accessories Malaysia supplies fluted panels, PVC marble, carbon crystal wall panels, MDF board, wainscoting and accessories for residential, commercial and hotel interiors. Nationwide delivery from Selangor.",
   keywords: [
-    "wall panel accessories malaysia",
-    "aluminum profiles",
-    "end caps",
-    "fluted panel trim",
-    "panel adhesive",
-    "wainscoting accessories",
-    "wall panel installation",
+    "wall panel supplier malaysia",
+    "fluted panel",
+    "pvc marble",
+    "carbon crystal wall panel",
+    "wainscoting",
+    "mdf board",
+    "wall panel accessories",
   ],
   openGraph: {
     title: "Wall Panel Accessories Malaysia",
     description:
-      "Profiles, trims, adhesives and hardware for wall panel installation. Supplying contractors and DIY across Malaysia.",
+      "Fluted panels, PVC marble, carbon crystal, wainscoting and accessories for modern interiors. Nationwide delivery.",
     type: "website",
     locale: "en_MY",
   },
@@ -44,11 +45,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${playfair.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {children}
-        <WhatsAppButton />
+        <FloatingButtons />
       </body>
     </html>
   );
