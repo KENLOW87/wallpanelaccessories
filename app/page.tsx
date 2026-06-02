@@ -20,14 +20,14 @@ export default function Home() {
         {/* ===== HERO ===== */}
         <section className="relative overflow-hidden bg-ink">
           <FlutedImage tone="darkwood" src="/images/intro.jpg" alt="Fluted feature wall interior" priority className="absolute inset-0 h-full w-full" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/60 to-ink/25" />
           <div className="relative mx-auto flex min-h-[78vh] max-w-7xl flex-col justify-center px-5 py-24 lg:px-8">
             <div className="max-w-2xl">
-              <p className="font-[family-name:var(--font-display)] text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
+              <p className="font-[family-name:var(--font-display)] text-4xl font-extrabold uppercase leading-tight text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.6)] sm:text-5xl lg:text-6xl">
                 Adds a directional<br />
                 <span className="text-lime">flair to any space</span>
               </p>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-200 [text-shadow:0_1px_8px_rgba(0,0,0,0.7)]">
                 Get inspired by a fresh approach to crafting a home that&apos;s uniquely yours —
                 fluted panels, PVC marble and carbon crystal walls, supplied across Malaysia.
               </p>
