@@ -19,8 +19,8 @@ export default function Home() {
       <main className="flex-1">
         {/* ===== HERO ===== */}
         <section className="relative overflow-hidden bg-ink">
-          <FlutedImage tone="darkwood" gap={22} className="absolute inset-0 h-full w-full" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/30" />
+          <FlutedImage tone="darkwood" src="/images/intro.jpg" alt="Fluted feature wall interior" priority className="absolute inset-0 h-full w-full" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/35" />
           <div className="relative mx-auto flex min-h-[78vh] max-w-7xl flex-col justify-center px-5 py-24 lg:px-8">
             <div className="max-w-2xl">
               <p className="font-[family-name:var(--font-display)] text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
@@ -88,7 +88,7 @@ export default function Home() {
                 View More
               </Link>
             </div>
-            <FlutedImage tone="marble" rounded className="aspect-[5/4] w-full" />
+            <FlutedImage tone="marble" src="/images/carbon-crystal.jpg" alt="Living room wall panel feature" rounded className="aspect-[5/4] w-full" />
           </div>
         </section>
 
@@ -108,7 +108,7 @@ export default function Home() {
                   href={`/products#${c.slug}`}
                   className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
                 >
-                  <FlutedImage tone={c.tone} className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-105" />
+                  <FlutedImage tone={c.tone} src={c.img} alt={c.title} className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-5">
                     <h3 className="font-[family-name:var(--font-display)] text-lg font-bold uppercase text-white">
@@ -126,8 +126,8 @@ export default function Home() {
 
         {/* ===== THOUGHTFUL DESIGN BAND ===== */}
         <section className="relative overflow-hidden">
-          <FlutedImage tone="stone" gap={26} className="absolute inset-0 h-full w-full" />
-          <div className="absolute inset-0 bg-ink/55" />
+          <FlutedImage tone="stone" src="/images/project2.jpg" alt="LED-lit fluted feature wall" className="absolute inset-0 h-full w-full" />
+          <div className="absolute inset-0 bg-ink/65" />
           <div className="relative mx-auto max-w-7xl px-5 py-24 text-center lg:px-8">
             <h2 className="font-[family-name:var(--font-display)] text-3xl font-extrabold uppercase text-white sm:text-4xl">
               Thoughtful design for modern living
@@ -156,7 +156,7 @@ export default function Home() {
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {projects.map((p) => (
                 <article key={p.title} className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
-                  <FlutedImage tone={p.tone} className="aspect-[4/3] w-full" />
+                  <FlutedImage tone={p.tone} src={p.img} alt={p.title} className="aspect-[4/3] w-full" />
                   <div className="p-5">
                     <h3 className="font-[family-name:var(--font-display)] text-base font-bold uppercase leading-snug text-foreground">
                       {p.title}

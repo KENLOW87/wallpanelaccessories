@@ -32,7 +32,7 @@ export default function AboutPage() {
 
         <section className="diag-texture bg-background">
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8">
-            <FlutedImage tone="darkwood" rounded className="aspect-[5/4] w-full" />
+            <FlutedImage tone="darkwood" src="/images/project5.jpg" alt="Dark walnut fluted TV feature wall" rounded className="aspect-[5/4] w-full" />
             <div>
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold uppercase text-foreground sm:text-3xl">
                 Who we are

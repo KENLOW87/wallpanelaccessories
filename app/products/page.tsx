@@ -58,6 +58,8 @@ export default function ProductsPage() {
                 >
                   <FlutedImage
                     tone={c.tone}
+                    src={c.img}
+                    alt={c.title}
                     rounded
                     className={`aspect-[4/3] w-full ${i % 2 ? "lg:order-2" : ""}`}
                   />

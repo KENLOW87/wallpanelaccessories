@@ -33,7 +33,7 @@ export default function GalleryPage() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {projects.map((p) => (
                 <article key={p.title} className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
-                  <FlutedImage tone={p.tone} className="aspect-[4/3] w-full" />
+                  <FlutedImage tone={p.tone} src={p.img} alt={p.title} className="aspect-[4/3] w-full" />
                   <div className="p-5">
                     <h2 className="font-[family-name:var(--font-display)] text-base font-bold uppercase leading-snug text-foreground">
                       {p.title}
@@ -43,13 +43,6 @@ export default function GalleryPage() {
                 </article>
               ))}
             </div>
-
-            <p className="mt-10 rounded-xl border border-dashed border-border bg-muted/60 p-6 text-sm text-foreground/70">
-              <strong className="text-foreground">For Ken:</strong> the panel-texture tiles are
-              placeholders. Send the real project photos (or export them from NEWPAGES) and I&apos;ll
-              swap them into <code className="rounded bg-white px-1.5 py-0.5">public/images/</code> for
-              each project.
-            </p>
           </div>
         </section>
       </main>

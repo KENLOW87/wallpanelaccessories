@@ -6,6 +6,7 @@ export interface Category {
   short: string;
   long: string;
   tone: Tone;
+  img: string;
   items: string[];
 }
 
@@ -18,6 +19,7 @@ export const categories: Category[] = [
     long:
       "Carbon crystal wall panels deliver a premium, seamless finish that resists scratches, moisture and fading. Ideal for feature walls, TV consoles and wardrobe fronts in homes, offices and hotels.",
     tone: "dark",
+    img: "/images/carbon-crystal.jpg",
     items: ["Matte finish", "High gloss", "Marble pattern", "Solid colours"],
   },
   {
@@ -27,6 +29,7 @@ export const categories: Category[] = [
     long:
       "MDF wave and grooved boards bring depth and rhythm to a wall. A smooth, paintable surface that machines cleanly for custom carpentry and built-in furniture.",
     tone: "warm",
+    img: "/images/mdf-board.jpg",
     items: ["Wave board", "Grooved board", "Paintable surface", "Custom carpentry"],
   },
   {
@@ -36,6 +39,7 @@ export const categories: Category[] = [
     long:
       "PVC marble sheets reproduce natural marble veining at a fraction of the weight and cost. Waterproof and wipe-clean, perfect for feature walls, columns and wet areas.",
     tone: "marble",
+    img: "/images/pvc-marble.jpg",
     items: ["Calacatta white", "Black marble", "Beige travertine", "Grey veined"],
   },
   {
@@ -45,6 +49,7 @@ export const categories: Category[] = [
     long:
       "Wainscoting and decorative moulding frame a wall with elegant proportion. Pre-finished profiles make it fast to create a refined, classic feature on feature walls and hallways.",
     tone: "stone",
+    img: "/images/wainscoting.jpg",
     items: ["Panel moulding", "Chair rail", "Skirting", "Decorative frames"],
   },
   {
@@ -54,6 +59,7 @@ export const categories: Category[] = [
     long:
       "Our signature fluted panels create striking vertical rhythm and texture. Available in wood, hairline, walnut and coffee tones — pair with LED lighting for a modern, futuristic feature wall.",
     tone: "darkwood",
+    img: "/images/fluted-panel.jpg",
     items: ["Wood tone", "Hairline black", "Dark walnut", "Coffee / beige"],
   },
   {
@@ -63,6 +69,7 @@ export const categories: Category[] = [
     long:
       "Every finishing piece a wall panel installation needs — aluminium profiles, end caps, trims, adhesives, mounting hardware and LED strips. Matched to the panels we supply.",
     tone: "wood",
+    img: "/images/accessories.jpg",
     items: ["Aluminium profiles", "End caps & trims", "Panel adhesive", "LED strips"],
   },
 ];

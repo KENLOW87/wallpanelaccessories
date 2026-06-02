@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 
 type Tone = "wood" | "darkwood" | "marble" | "stone" | "dark" | "warm";
 
-const tones: Record<Tone, { base: string; line: string; glow?: string }> = {
+const tones: Record<Tone, { base: string; line: string }> = {
   wood: { base: "linear-gradient(135deg,#c2a878,#9b7d52)", line: "rgba(60,40,20,0.28)" },
   darkwood: { base: "linear-gradient(135deg,#5a4a38,#2f2519)", line: "rgba(0,0,0,0.45)" },
   marble: { base: "linear-gradient(135deg,#efece6,#d4cfc6)", line: "rgba(120,120,120,0.18)" },
@@ -12,38 +12,54 @@ const tones: Record<Tone, { base: string; line: string; glow?: string }> = {
 };
 
 /**
- * Placeholder that renders a vertical "fluted panel" texture in a chosen tone.
- * Stands in for real product photography until Ken supplies the image files.
- * Pass `label` to overlay a caption; `gap`/`thickness` tune the flute density.
+ * Renders a real photo when `src` is given, otherwise a vertical "fluted panel"
+ * texture in the chosen tone (used as a graceful fallback).
  */
 export default function FlutedImage({
   tone = "wood",
+  src,
+  alt = "",
   label,
   className = "",
   rounded = false,
   gap = 14,
+  priority = false,
 }: {
   tone?: Tone;
+  src?: string;
+  alt?: string;
   label?: string;
   className?: string;
   rounded?: boolean;
   gap?: number;
+  priority?: boolean;
 }) {
   const t = tones[tone];
-  const style: CSSProperties = {
+  const textureStyle: CSSProperties = {
     backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent ${gap - 2}px, ${t.line} ${gap - 2}px, ${t.line} ${gap}px), ${t.base}`,
   };
+
   return (
     <div
-      aria-hidden
       className={`relative overflow-hidden ${rounded ? "rounded-2xl" : ""} ${className}`}
-      style={style}
+      style={src ? undefined : textureStyle}
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+      {src && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={src}
+          alt={alt}
+          loading={priority ? "eager" : "lazy"}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
       {label && (
-        <span className="absolute left-5 top-4 font-[family-name:var(--font-display)] text-lg font-bold uppercase tracking-wide text-white drop-shadow">
-          {label}
-        </span>
+        <>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+          <span className="absolute left-5 top-4 font-[family-name:var(--font-display)] text-lg font-bold uppercase tracking-wide text-white drop-shadow">
+            {label}
+          </span>
+        </>
       )}
     </div>
   );
