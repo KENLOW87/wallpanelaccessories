@@ -38,11 +38,13 @@ Sister to Ken's 7 newpages.com.my regional wall-panel sites (geometra.com.my, wa
 - `app/data/categories.tsx` — single source of truth for the 8 product categories (used by both homepage grid and `/products`)
 
 ## Domains
-- Production (working now): https://wallpanelaccessories.vercel.app
-- Custom (pending DNS): https://wallpanelaccessories.com — domain at Namecheap, registered 2026-02-06 for 3 years, registrant Nova Arte Sdn Bhd. Vercel-side configured; needs A record `@ → 76.76.21.21` + CNAME `www → cname.vercel-dns.com` at Namecheap to go live.
+- Primary (LIVE): https://www.wallpanelaccessories.com
+- Apex https://wallpanelaccessories.com → 308 permanent redirect to www (www is the chosen primary).
+- Also live: https://wallpanelaccessories.vercel.app
+- Domain at Namecheap, registered 2026-02-06 for 3 years, registrant Nova Arte Sdn Bhd, WhoisGuard on. DNS at Namecheap: A `@ → 76.76.21.21`, CNAME `www → cname.vercel-dns.com`. SSL auto-issued by Vercel. Went live 2026-06-02.
 
 ## Where we left off (update this as work progresses)
 - DONE: Site scaffolded, 5 pages built, deployed to Vercel, GitHub auto-deploy wired.
+- DONE: Custom domain live — www.wallpanelaccessories.com (apex 308-redirects to www). Namecheap DNS + Vercel redirect configured 2026-06-02.
 - OPEN: Replace placeholder content — real product photos (`public/products/`), gallery photos (`public/gallery/`), real stat numbers (currently 8+/5000+/500+/100+ are made up), correct WhatsApp number, bilingual EN/中文 copy if matching the regional sites.
-- OPEN: User to add Namecheap DNS records to activate `wallpanelaccessories.com`.
 - OPEN / candidate next: add `/news` page if Ken wants to publish posts; add small admin/CMS later if content updates get frequent (Supabase or a headless CMS).
